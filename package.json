@@ -1,0 +1,26 @@
+{
+  "name": "clonebuster",
+  "version": "2.0.0",
+  "description": "Comprehensive Website Cloning Tool based on CLONEBUSTER_PROMPT.md",
+  "main": "clonebuster.js",
+  "scripts": {
+    "clone": "node clonebuster.js",
+    "clone:siri": "node clonebuster.js https://www.apple.com/siri/ siri.html ./siri-clone",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "website",
+    "clone",
+    "scraper",
+    "puppeteer"
+  ],
+  "author": "blizor",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.6.2",
+    "cheerio": "^1.0.0-rc.12",
+    "css": "^3.0.0",
+    "mime-types": "^2.1.35",
+    "puppeteer": "^21.6.0"
+  }
+}
