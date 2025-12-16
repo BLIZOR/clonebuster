@@ -78,12 +78,48 @@
 	<link rel="stylesheet" href="css/overview.built.css" type="text/css" />
 	<link rel="stylesheet" href="css/clonebuster-overrides.css" type="text/css" />
 	<script src="js/head.built.js" type="text/javascript" charset="utf-8"></script>
-<style>
+<style id="clonebuster-inline-fixes">
+/* ═══════════════════════════════════════════════════════════════════════════════
+   CLONEBUSTER v5 - Cross-Browser Inline CSS (All Vendor Prefixes)
+   Supports: Chrome, Firefox, Safari, Edge, Opera, IE11
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+/* Keyframe Animations - All Prefixes */
+@-webkit-keyframes siri-gradient {
+    0% { background-position: 100% 100%; }
+    100% { background-position: 38% 100%; }
+}
+@-moz-keyframes siri-gradient {
+    0% { background-position: 100% 100%; }
+    100% { background-position: 38% 100%; }
+}
+@-o-keyframes siri-gradient {
+    0% { background-position: 100% 100%; }
+    100% { background-position: 38% 100%; }
+}
 @keyframes siri-gradient {
     0% { background-position: 100% 100%; }
     100% { background-position: 38% 100%; }
 }
-/* Force all images to be visible */
+
+@-webkit-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+@-moz-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+@-o-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Force all images to be visible - Cross-browser */
 [data-component-list] picture,
 [data-component-list] picture img,
 .section-hero-images picture,
@@ -94,25 +130,86 @@
 .main-tile picture img {
     opacity: 1 !important;
     visibility: visible !important;
+    -webkit-animation: fadeIn 0.5s ease-out forwards;
+    -moz-animation: fadeIn 0.5s ease-out forwards;
+    -o-animation: fadeIn 0.5s ease-out forwards;
+    animation: fadeIn 0.5s ease-out forwards;
 }
-/* Fix CarPlay dashboard mask */
+
+/* Fix CarPlay dashboard mask - Cross-browser */
 .overview-car-carplay img {
     -webkit-mask: url(assets/car_carplay_mask__gdalbb16ucq6_xlarge.png);
+    -moz-mask: url(assets/car_carplay_mask__gdalbb16ucq6_xlarge.png);
+    -o-mask: url(assets/car_carplay_mask__gdalbb16ucq6_xlarge.png);
     mask: url(assets/car_carplay_mask__gdalbb16ucq6_xlarge.png);
     -webkit-mask-size: 100%;
+    -moz-mask-size: 100%;
+    -o-mask-size: 100%;
     mask-size: 100%;
     -webkit-mask-repeat: no-repeat;
+    -moz-mask-repeat: no-repeat;
+    -o-mask-repeat: no-repeat;
     mask-repeat: no-repeat;
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
 }
+
+/* Siri hero text - Cross-browser with all prefixes */
+.siri {
+    -webkit-mask: url(assets/hero_siri__dqh8piyszs02_large.svg) !important;
+    -moz-mask: url(assets/hero_siri__dqh8piyszs02_large.svg) !important;
+    -o-mask: url(assets/hero_siri__dqh8piyszs02_large.svg) !important;
+    mask: url(assets/hero_siri__dqh8piyszs02_large.svg) !important;
+    -webkit-mask-size: 100% !important;
+    -moz-mask-size: 100% !important;
+    -o-mask-size: 100% !important;
+    mask-size: 100% !important;
+    -webkit-mask-repeat: no-repeat !important;
+    -moz-mask-repeat: no-repeat !important;
+    -o-mask-repeat: no-repeat !important;
+    mask-repeat: no-repeat !important;
+    background: -webkit-linear-gradient(329deg, #FE0576 24%, #EA12B6 40%, #38CBFF 60%) !important;
+    background: -moz-linear-gradient(329deg, #FE0576 24%, #EA12B6 40%, #38CBFF 60%) !important;
+    background: -o-linear-gradient(329deg, #FE0576 24%, #EA12B6 40%, #38CBFF 60%) !important;
+    background: linear-gradient(121deg, #FE0576 24%, #EA12B6 40%, #38CBFF 60%) !important;
+    -webkit-background-size: 300% 100% !important;
+    -moz-background-size: 300% 100% !important;
+    -o-background-size: 300% 100% !important;
+    background-size: 300% 100% !important;
+    -webkit-animation: siri-gradient 3s cubic-bezier(0.33, 1, 0.68, 1) forwards !important;
+    -moz-animation: siri-gradient 3s cubic-bezier(0.33, 1, 0.68, 1) forwards !important;
+    -o-animation: siri-gradient 3s cubic-bezier(0.33, 1, 0.68, 1) forwards !important;
+    animation: siri-gradient 3s cubic-bezier(0.33, 1, 0.68, 1) forwards !important;
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+    will-change: background-position;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Responsive breakpoints */
 @media (max-width: 1440px) {
     .overview-car-carplay img {
         -webkit-mask: url(assets/car_carplay_mask__gdalbb16ucq6_large.png);
+        -moz-mask: url(assets/car_carplay_mask__gdalbb16ucq6_large.png);
         mask: url(assets/car_carplay_mask__gdalbb16ucq6_large.png);
     }
 }
 @media (max-width: 1068px) {
     .overview-car-carplay img {
         -webkit-mask: url(assets/car_carplay_mask__gdalbb16ucq6_medium.png);
+        -moz-mask: url(assets/car_carplay_mask__gdalbb16ucq6_medium.png);
         mask: url(assets/car_carplay_mask__gdalbb16ucq6_medium.png);
     }
     .siri {
@@ -123,11 +220,32 @@
 @media (max-width: 734px) {
     .overview-car-carplay img {
         -webkit-mask: url(assets/car_carplay_mask__gdalbb16ucq6_small.png);
+        -moz-mask: url(assets/car_carplay_mask__gdalbb16ucq6_small.png);
         mask: url(assets/car_carplay_mask__gdalbb16ucq6_small.png);
     }
     .siri {
         width: 154px !important;
         height: 88px !important;
+    }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+    .siri, picture, picture img {
+        -webkit-animation: none !important;
+        -moz-animation: none !important;
+        -o-animation: none !important;
+        animation: none !important;
+    }
+    .siri {
+        background-position: 38% 100% !important;
+    }
+}
+
+/* IE11 Fallback */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .siri {
+        background: #EA12B6 !important;
     }
 }
 </style>

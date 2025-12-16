@@ -1,54 +1,230 @@
-/* CLONEBUSTER - CSS Overrides v2 */
-/* Fixes all broken paths and forces visibility */
+/* ═══════════════════════════════════════════════════════════════════════════════
+   CLONEBUSTER v5 - Cross-Browser Compatible CSS Overrides
+
+   Browser Support:
+   - Chrome/Edge (Blink)
+   - Firefox (Gecko)
+   - Safari (WebKit)
+   - Opera
+   - IE11 (limited, with fallbacks)
+   ═══════════════════════════════════════════════════════════════════════════════ */
 
 /* ============================================================ */
-/* SIRI HERO TEXT - SVG MASK WITH GRADIENT */
+/* KEYFRAME ANIMATIONS - ALL VENDOR PREFIXES */
 /* ============================================================ */
-.siri {
-    -webkit-mask: url(../assets/hero_siri__dqh8piyszs02_large.svg) !important;
-    mask: url(../assets/hero_siri__dqh8piyszs02_large.svg) !important;
-    -webkit-mask-size: 100% !important;
-    mask-size: 100% !important;
-    -webkit-mask-repeat: no-repeat !important;
-    mask-repeat: no-repeat !important;
-    background: linear-gradient(121deg, #FE0576 24%, #EA12B6 40%, #38CBFF 60%) !important;
-    background-size: 300% 100% !important;
-    width: 384px;
-    height: 218px;
-    position: relative;
-    display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
+
+/* Siri Gradient Animation */
+@-webkit-keyframes siri-gradient {
+    0% { background-position: 100% 100%; }
+    100% { background-position: 38% 100%; }
+}
+@-moz-keyframes siri-gradient {
+    0% { background-position: 100% 100%; }
+    100% { background-position: 38% 100%; }
+}
+@-o-keyframes siri-gradient {
+    0% { background-position: 100% 100%; }
+    100% { background-position: 38% 100%; }
+}
+@keyframes siri-gradient {
+    0% { background-position: 100% 100%; }
+    100% { background-position: 38% 100%; }
+}
+
+/* Fade In Animation */
+@-webkit-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+@-moz-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+@-o-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Slide Up Animation */
+@-webkit-keyframes slideUp {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(20px);
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+@-moz-keyframes slideUp {
+    0% {
+        opacity: 0;
+        -moz-transform: translateY(20px);
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        -moz-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+@-o-keyframes slideUp {
+    0% {
+        opacity: 0;
+        -o-transform: translateY(20px);
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        -o-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(20px);
+        -moz-transform: translateY(20px);
+        -ms-transform: translateY(20px);
+        -o-transform: translateY(20px);
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        -moz-transform: translateY(0);
+        -ms-transform: translateY(0);
+        -o-transform: translateY(0);
+        transform: translateY(0);
+    }
 }
 
 /* ============================================================ */
-/* CARPLAY DASHBOARD MASK */
+/* SIRI HERO TEXT - SVG MASK WITH GRADIENT (CROSS-BROWSER) */
+/* ============================================================ */
+.siri {
+    /* Mask - all prefixes */
+    -webkit-mask: url(../assets/hero_siri__dqh8piyszs02_large.svg) !important;
+    -moz-mask: url(../assets/hero_siri__dqh8piyszs02_large.svg) !important;
+    -o-mask: url(../assets/hero_siri__dqh8piyszs02_large.svg) !important;
+    mask: url(../assets/hero_siri__dqh8piyszs02_large.svg) !important;
+
+    /* Mask size */
+    -webkit-mask-size: 100% !important;
+    -moz-mask-size: 100% !important;
+    -o-mask-size: 100% !important;
+    mask-size: 100% !important;
+
+    /* Mask repeat */
+    -webkit-mask-repeat: no-repeat !important;
+    -moz-mask-repeat: no-repeat !important;
+    -o-mask-repeat: no-repeat !important;
+    mask-repeat: no-repeat !important;
+
+    /* Gradient background - all prefixes */
+    background: -webkit-linear-gradient(329deg, #FE0576 24%, #EA12B6 40%, #38CBFF 60%) !important;
+    background: -moz-linear-gradient(329deg, #FE0576 24%, #EA12B6 40%, #38CBFF 60%) !important;
+    background: -o-linear-gradient(329deg, #FE0576 24%, #EA12B6 40%, #38CBFF 60%) !important;
+    background: linear-gradient(121deg, #FE0576 24%, #EA12B6 40%, #38CBFF 60%) !important;
+
+    /* Background size */
+    -webkit-background-size: 300% 100% !important;
+    -moz-background-size: 300% 100% !important;
+    -o-background-size: 300% 100% !important;
+    background-size: 300% 100% !important;
+
+    /* Animation - all prefixes */
+    -webkit-animation: siri-gradient 3s cubic-bezier(0.33, 1, 0.68, 1) forwards !important;
+    -moz-animation: siri-gradient 3s cubic-bezier(0.33, 1, 0.68, 1) forwards !important;
+    -o-animation: siri-gradient 3s cubic-bezier(0.33, 1, 0.68, 1) forwards !important;
+    animation: siri-gradient 3s cubic-bezier(0.33, 1, 0.68, 1) forwards !important;
+
+    /* Dimensions */
+    width: 384px;
+    height: 218px;
+    position: relative;
+
+    /* Visibility */
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+
+    /* Hardware acceleration for smoother animations */
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
+
+    /* Backface visibility */
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+
+    /* Will change for performance */
+    will-change: background-position;
+}
+
+/* ============================================================ */
+/* CARPLAY DASHBOARD MASK (CROSS-BROWSER) */
 /* ============================================================ */
 .overview-car-carplay img,
 .overview-car-carplay.sticky-hw img,
 picture.overview-car-carplay img {
+    /* Mask - all prefixes */
     -webkit-mask: url(../assets/car_carplay_mask__gdalbb16ucq6_xlarge.png) !important;
+    -moz-mask: url(../assets/car_carplay_mask__gdalbb16ucq6_xlarge.png) !important;
+    -o-mask: url(../assets/car_carplay_mask__gdalbb16ucq6_xlarge.png) !important;
     mask: url(../assets/car_carplay_mask__gdalbb16ucq6_xlarge.png) !important;
+
+    /* Mask size */
     -webkit-mask-size: 100% !important;
+    -moz-mask-size: 100% !important;
+    -o-mask-size: 100% !important;
     mask-size: 100% !important;
+
+    /* Mask repeat */
     -webkit-mask-repeat: no-repeat !important;
+    -moz-mask-repeat: no-repeat !important;
+    -o-mask-repeat: no-repeat !important;
     mask-repeat: no-repeat !important;
+
+    /* Visibility */
     opacity: 1 !important;
     visibility: visible !important;
+
+    /* Hardware acceleration */
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    transform: translateZ(0);
 }
 
 /* ============================================================ */
-/* HOMEPOD MINI MASK */
+/* HOMEPOD MINI MASK (CROSS-BROWSER) */
 /* ============================================================ */
 .overview-hero-homepod-mini img {
+    /* Mask - all prefixes */
     -webkit-mask: url(../assets/hero_homepod_mini_mask__ey7dvp5lrtw2_large.png) !important;
+    -moz-mask: url(../assets/hero_homepod_mini_mask__ey7dvp5lrtw2_large.png) !important;
+    -o-mask: url(../assets/hero_homepod_mini_mask__ey7dvp5lrtw2_large.png) !important;
     mask: url(../assets/hero_homepod_mini_mask__ey7dvp5lrtw2_large.png) !important;
+
+    /* Mask size */
     -webkit-mask-size: 100% !important;
+    -moz-mask-size: 100% !important;
+    -o-mask-size: 100% !important;
     mask-size: 100% !important;
 }
 
 /* ============================================================ */
-/* FORCE ALL IMAGES VISIBLE */
+/* FORCE ALL IMAGES VISIBLE (CROSS-BROWSER) */
 /* ============================================================ */
 picture,
 picture img,
@@ -69,10 +245,16 @@ picture img,
     display: block !important;
     visibility: visible !important;
     opacity: 1 !important;
+
+    /* Fade in animation */
+    -webkit-animation: fadeIn 0.5s ease-out forwards;
+    -moz-animation: fadeIn 0.5s ease-out forwards;
+    -o-animation: fadeIn 0.5s ease-out forwards;
+    animation: fadeIn 0.5s ease-out forwards;
 }
 
 /* ============================================================ */
-/* BENTO BOX / TILE IMAGES */
+/* BENTO BOX / TILE IMAGES (CROSS-BROWSER) */
 /* ============================================================ */
 .scenario-tile picture,
 .scenario-tile picture img,
@@ -87,6 +269,13 @@ picture img,
     opacity: 1 !important;
     visibility: visible !important;
     display: block !important;
+
+    /* Hardware acceleration */
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
 }
 
 /* ============================================================ */
@@ -99,12 +288,63 @@ picture img,
 }
 
 /* ============================================================ */
-/* RESPONSIVE MASK FIXES */
+/* PARALLAX AND SCROLL ANIMATIONS (CROSS-BROWSER) */
+/* ============================================================ */
+.parallax-this,
+[data-anim-scroll-group] {
+    /* Smooth transitions */
+    -webkit-transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    -moz-transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    -o-transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+
+    /* Hardware acceleration */
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
+
+    /* Will change */
+    will-change: transform, opacity;
+}
+
+/* ============================================================ */
+/* GRADIENT TEXT EFFECTS (CROSS-BROWSER) */
+/* ============================================================ */
+.gradient {
+    /* Gradient text - WebKit */
+    background: -webkit-linear-gradient(121deg, #FE0576, #EA12B6, #38CBFF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    /* Gradient text - Standard */
+    background: linear-gradient(121deg, #FE0576, #EA12B6, #38CBFF);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+
+    /* Fallback for browsers that don't support gradient text */
+    color: #EA12B6;
+}
+
+/* Firefox specific gradient text fix */
+@-moz-document url-prefix() {
+    .gradient {
+        background: -moz-linear-gradient(121deg, #FE0576, #EA12B6, #38CBFF);
+        -moz-background-clip: text;
+        color: transparent;
+    }
+}
+
+/* ============================================================ */
+/* RESPONSIVE MASK FIXES (ALL BREAKPOINTS) */
 /* ============================================================ */
 @media only screen and (max-width: 1440px) {
     .overview-car-carplay img,
     .overview-car-carplay.sticky-hw img {
         -webkit-mask: url(../assets/car_carplay_mask__gdalbb16ucq6_large.png) !important;
+        -moz-mask: url(../assets/car_carplay_mask__gdalbb16ucq6_large.png) !important;
         mask: url(../assets/car_carplay_mask__gdalbb16ucq6_large.png) !important;
     }
 }
@@ -117,10 +357,12 @@ picture img,
     .overview-car-carplay img,
     .overview-car-carplay.sticky-hw img {
         -webkit-mask: url(../assets/car_carplay_mask__gdalbb16ucq6_medium.png) !important;
+        -moz-mask: url(../assets/car_carplay_mask__gdalbb16ucq6_medium.png) !important;
         mask: url(../assets/car_carplay_mask__gdalbb16ucq6_medium.png) !important;
     }
     .overview-hero-homepod-mini img {
         -webkit-mask: url(../assets/hero_homepod_mini_mask__ey7dvp5lrtw2_medium.png) !important;
+        -moz-mask: url(../assets/hero_homepod_mini_mask__ey7dvp5lrtw2_medium.png) !important;
         mask: url(../assets/hero_homepod_mini_mask__ey7dvp5lrtw2_medium.png) !important;
     }
 }
@@ -133,22 +375,129 @@ picture img,
     .overview-car-carplay img,
     .overview-car-carplay.sticky-hw img {
         -webkit-mask: url(../assets/car_carplay_mask__gdalbb16ucq6_small.png) !important;
+        -moz-mask: url(../assets/car_carplay_mask__gdalbb16ucq6_small.png) !important;
         mask: url(../assets/car_carplay_mask__gdalbb16ucq6_small.png) !important;
     }
     .overview-hero-homepod-mini img {
         -webkit-mask: url(../assets/hero_homepod_mini_mask__ey7dvp5lrtw2_small.png) !important;
+        -moz-mask: url(../assets/hero_homepod_mini_mask__ey7dvp5lrtw2_small.png) !important;
         mask: url(../assets/hero_homepod_mini_mask__ey7dvp5lrtw2_small.png) !important;
     }
 }
 
 /* ============================================================ */
-/* ANIMATION KEYFRAMES */
+/* IE11 FALLBACKS */
 /* ============================================================ */
-@keyframes siri-gradient {
-    0% { background-position: 100% 100%; }
-    100% { background-position: 38% 100%; }
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    /* IE11 doesn't support CSS masks, show solid color fallback */
+    .siri {
+        background: #EA12B6 !important;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    }
+
+    /* Force visibility */
+    picture img,
+    .section-hero-images img {
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
 }
 
-.siri {
-    animation: siri-gradient 3s cubic-bezier(0.33, 1, 0.68, 1) forwards !important;
+/* ============================================================ */
+/* EDGE LEGACY FALLBACKS */
+/* ============================================================ */
+@supports (-ms-ime-align: auto) {
+    .siri {
+        background: linear-gradient(121deg, #FE0576 24%, #EA12B6 40%, #38CBFF 60%) !important;
+    }
+}
+
+/* ============================================================ */
+/* REDUCED MOTION PREFERENCE (ACCESSIBILITY) */
+/* ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+    .siri,
+    .parallax-this,
+    [data-anim-scroll-group],
+    picture,
+    picture img {
+        -webkit-animation: none !important;
+        -moz-animation: none !important;
+        -o-animation: none !important;
+        animation: none !important;
+        -webkit-transition: none !important;
+        -moz-transition: none !important;
+        -o-transition: none !important;
+        transition: none !important;
+    }
+
+    .siri {
+        background-position: 38% 100% !important;
+    }
+}
+
+/* ============================================================ */
+/* PRINT STYLES */
+/* ============================================================ */
+@media print {
+    .siri {
+        background: #EA12B6 !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    picture img {
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+}
+
+/* ============================================================ */
+/* HIGH CONTRAST MODE SUPPORT */
+/* ============================================================ */
+@media (prefers-contrast: high) {
+    .siri {
+        background: linear-gradient(121deg, #FF0080 24%, #FF00FF 40%, #00FFFF 60%) !important;
+    }
+
+    .gradient {
+        color: #FF00FF !important;
+        -webkit-text-fill-color: #FF00FF !important;
+    }
+}
+
+/* ============================================================ */
+/* DARK MODE SUPPORT */
+/* ============================================================ */
+@media (prefers-color-scheme: dark) {
+    /* Ensure visibility in dark mode */
+    .section-hero-images picture img,
+    .scenario-tile picture img,
+    .main-tile picture img {
+        opacity: 1 !important;
+    }
+}
+
+/* ============================================================ */
+/* GPU ACCELERATION HINTS */
+/* ============================================================ */
+.section-hero,
+.section-scenario,
+.main-tile,
+.scenario-tile {
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+
+    -webkit-perspective: 1000px;
+    -moz-perspective: 1000px;
+    -ms-perspective: 1000px;
+    perspective: 1000px;
 }
